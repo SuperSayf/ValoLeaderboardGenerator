@@ -26,9 +26,7 @@ Using in-game stats of players fetched via an API, I have calculated a sort of "
 - [@SuperSayf](https://github.com/SuperSayf)
 
 
-## Badges
-
-Add badges from somewhere like: [shields.io](https://shields.io/)
+## License
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 
