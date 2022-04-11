@@ -22,48 +22,16 @@ public class App {
     public static final String ANSI_GREEN = "\u001B[32m";
 
     public static void main(String[] args) throws Exception {
-        // Create a array of names
-        String[] names = { "Sayfullah", "Yuvin", "Koshlan", "Akhil", "Tiago", "Tylin" };
 
-        String[] inGameNames = { "SuperSayf#EUW", "King5lasher#EUW", "NicololoDvinch#EUW", "WarriorTweak#EUW",
-                "THETVG7203#7771", "FDTylinLotts#EUW" };
+        // Take input of a list of names from the user and store it in an array called
+        // namesPlaying
+        Scanner input = new Scanner(System.in);
+        System.out.println(
+                "Enter the IGN#tagline of the players you want to generate a leaderboard for, separated by a comma: ");
+        String names = input.nextLine();
+        String[] namesPlaying = names.split(",");
 
-        // Print out the names with their index and a border
-        System.out.println("Index\tName");
-        System.out.println("-----\t----");
-
-        // Loop through the names array
-        for (int i = 0; i < names.length; i++) {
-            // Print out the index and name
-            System.out.println(i + "\t" + names[i]);
-        }
-
-        System.out.println();
-        System.out.println("Enter the indexes of those who are playing seperated by spaces:");
-
-        // Create a scanner
-        Scanner in = new Scanner(System.in);
-
-        // Take input
-        String input = in.nextLine();
-
-        // Close the scanner
-        in.close();
-
-        // Leave a line
-        System.out.println();
-
-        // Split the input into an array of integers
-        int[] indexes = new int[input.split(" ").length];
-        for (int i = 0; i < indexes.length; i++) {
-            indexes[i] = Integer.parseInt(input.split(" ")[i]);
-        }
-
-        // Using the indexes array, create a new array of names using the names array
-        String[] namesPlaying = new String[indexes.length];
-        for (int i = 0; i < indexes.length; i++) {
-            namesPlaying[i] = inGameNames[indexes[i]];
-        }
+        input.close();
 
         // Progress bar
         ProgressBar pb = new ProgressBar("Processing", (namesPlaying.length * 10), ProgressBarStyle.ASCII);
